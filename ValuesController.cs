@@ -9,6 +9,12 @@ namespace DemoWebAPI.Controllers
 {
     public class ValuesController : ApiController
     {
+        [HttpGet]
+        public HttpResponseMessage Archive(int year, int month, int day)
+        {
+            return new HttpResponseMessage(HttpStatusCode.OK);
+        }
+
         // GET api/values
         public IEnumerable<string> Get()
         {
