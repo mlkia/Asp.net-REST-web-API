@@ -7,7 +7,7 @@ using System.Web.Http;
 
 namespace DemoWebAPI.Controllers
 {
-    [Route("api/data")]
+    [RoutePrefix("api/controllers/data")]
     public class ValuesController : ApiController
     {
         [HttpGet]
@@ -16,14 +16,15 @@ namespace DemoWebAPI.Controllers
             return new HttpResponseMessage(HttpStatusCode.OK);
         }
 
-        // GET api/values
+        //api/controllers/data
+        [Route("")]
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2", "Malik" };
         }
 
-        //api/values/AddCustomer?customer=blabla
-        [Route("api/data/AddCustomer")]
+        //api/controllers/data/AddCustomer?customer=blabla
+        [Route("AddCustomer")]
         [HttpPost]
         public void Addcustomer (string customer)
         {
