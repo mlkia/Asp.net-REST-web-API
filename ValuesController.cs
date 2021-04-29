@@ -7,6 +7,7 @@ using System.Web.Http;
 
 namespace DemoWebAPI.Controllers
 {
+    [Route("api/data")]
     public class ValuesController : ApiController
     {
         [HttpGet]
@@ -19,6 +20,14 @@ namespace DemoWebAPI.Controllers
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2", "Malik" };
+        }
+
+        //api/values/AddCustomer?customer=blabla
+        [Route("api/data/AddCustomer")]
+        [HttpPost]
+        public void Addcustomer (string customer)
+        {
+
         }
 
         // GET api/values/5
